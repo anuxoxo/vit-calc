@@ -7,9 +7,12 @@ function handleClick() {
     const credit = document.querySelectorAll('.credit');
     const gpa = document.querySelectorAll('.gpa');
 
-    for (let i = 0; i < credit.length; i++) {
+    for (var i = 0; i < credit.length; i++) {
+
+        // if both fields are not null
 
         if (credit[i].value && gpa[i].value) {
+
             const currentCredit = parseFloat(credit[i].value);
             const currentGpa = parseFloat(gpa[i].value);
 
@@ -17,10 +20,32 @@ function handleClick() {
             totCredits += currentCredit;
         }
 
-    }
-    sum = sum.toFixed(2);
-    totCredits = totCredits.toFixed(2);
+        // if one of the two fields is null
 
-    cgpa = sum / totCredits;
-    alert("Your CGPA is " + cgpa.toFixed(2));
+        else if (credit[i].value || gpa[i].value) {
+            alert("Please enter valid credit & gpa values.");
+            break;
+        }
+    }
+
+    if (i === credit.length) {
+
+        sum = sum.toFixed(2);
+        totCredits = totCredits.toFixed(2);
+
+        cgpa = sum / totCredits;
+
+        if (cgpa)
+            alert("Your CGPA is " + cgpa.toFixed(2));
+        else
+            alert("Please enter valid credit & gpa values.");
+
+    }
 }
+
+document.addEventListener('keydown', (event) => {
+    if (event.code == 'Enter' && !event.shiftKey) {
+        event.preventDefault()
+        document.querySelector("#submit-btn").click();
+    }
+})

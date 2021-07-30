@@ -16,12 +16,16 @@
 </head>
 
 <body>
+
+    <!-- Navbar -->
     <nav>
         <a href="index.html">
             <img src="./img/logo.png" alt="logo" class="logo">
         </a>
         <h3 class="title-text"> CGPA Calculator</h3>
     </nav>
+
+    <!-- Input Form -->
     <form action="">
         <table id="semInput">
             <thead>
@@ -110,10 +114,11 @@
         </table>
 
         <div class="button-group">
-            <button type="reset" class="btn">Reset</button>
-            <button type="button" onClick="handleClick()" class="btn">Calculate</button>
+            <button type="reset" class="btn btn-red">Reset</button>
+            <button type="button" onClick="handleClick()" class="btn" id="submit-btn">Calculate</button>
         </div>
     </form>
+
     <footer>Copyright © Anushka | 2021 | All rights reserved.
         <div id="contact">
             <a href="https://github.com/anuxoxo"><img src="img/github.png" alt="github-icon"></a>
