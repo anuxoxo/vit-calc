@@ -101,13 +101,6 @@ input[type="number"]:focus {
   color: white;
 }
 
-.btn-red {
-  border: 2px solid red;
-}
-
-.btn-red:hover {
-  background: red;
-}
 
 .button-group {
   display: flex;
