@@ -11,6 +11,10 @@
     width: 100%;
   }
 
+  .btn {
+    width: 40%;
+  }
+
   footer {
     margin-top: 20%;
     font-size: 0.8rem;
