@@ -9,7 +9,7 @@ function handleClick() {
 
     for (var i = 0; i < credit.length; i++) {
 
-        // if both fields are not null
+        // ----- if both fields are not null -----
 
         if (credit[i].value && gpa[i].value) {
 
@@ -20,7 +20,7 @@ function handleClick() {
             totCredits += currentCredit;
         }
 
-        // if one of the two fields is null
+        // ----- if one of the two fields is null -----
 
         else if (credit[i].value || gpa[i].value) {
             alert("Please enter valid credit & gpa values.");
@@ -36,7 +36,8 @@ function handleClick() {
         cgpa = sum / totCredits;
 
         if (cgpa)
-            alert("Your CGPA is " + cgpa.toFixed(2));
+            // alert("Your CGPA is " + cgpa.toFixed(2));
+            overlayOn(cgpa);
         else
             alert("Please enter valid credit & gpa values.");
 
@@ -48,4 +49,15 @@ document.addEventListener('keydown', (event) => {
         event.preventDefault()
         document.querySelector("#submit-btn").click();
     }
-})
+});
+
+// ---------------- Handle overlays ------------------
+
+function overlayOn(cgpa) {
+    document.getElementById("overlay").style.display = "block";
+    document.getElementById("overlay-text").innerHTML = `<h3>Your CGPA is ${cgpa.toFixed(2)}</h3>`;
+}
+
+function overlayOff() {
+    document.getElementById("overlay").style.display = "none";
+}
