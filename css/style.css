@@ -92,7 +92,7 @@ input[type="number"]:focus {
   border: 2px solid hotpink;
   border-radius: 20px;
   padding: 10px 20px;
-  margin-right: 10px;
+  margin-bottom: 10px;
 }
 
 .btn:hover {
@@ -106,6 +106,7 @@ input[type="number"]:focus {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 footer {
