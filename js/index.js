@@ -55,7 +55,7 @@ document.addEventListener('keydown', (event) => {
 
 function overlayOn(cgpa) {
     document.getElementById("overlay").style.display = "block";
-    document.getElementById("overlay-text").innerHTML = `<h3>Your CGPA is ${cgpa.toFixed(2)}</h3>`;
+    document.getElementById("overlay-text").innerHTML = `<h1>Your CGPA is ${cgpa.toFixed(2)}</h1>`;
 }
 
 function overlayOff() {
