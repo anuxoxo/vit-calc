@@ -23,7 +23,7 @@ function handleClick() {
         // ----- if one of the two fields is null -----
 
         else if (credit[i].value || gpa[i].value) {
-            alert("Please enter valid credit & gpa values.");
+            overlayOn("Please enter valid credit & gpa values.");
             break;
         }
     }
@@ -37,9 +37,9 @@ function handleClick() {
 
         if (cgpa)
             // alert("Your CGPA is " + cgpa.toFixed(2));
-            overlayOn(cgpa);
+            overlayOn(`<p>Your CGPA is ${cgpa.toFixed(2)}</p>`);
         else
-            alert("Please enter valid credit & gpa values.");
+            overlayOn("Please enter valid credit & gpa values.");
 
     }
 }
@@ -55,7 +55,7 @@ document.addEventListener('keydown', (event) => {
 
 function overlayOn(cgpa) {
     document.getElementById("overlay").style.display = "block";
-    document.getElementById("overlay-text").innerHTML = `<h1>Your CGPA is ${cgpa.toFixed(2)}</h1>`;
+    document.getElementById("overlay-text").innerHTML = cgpa;
 }
 
 function overlayOff() {
